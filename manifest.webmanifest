@@ -1,0 +1,21 @@
+{
+  "name": "Pop-Top Camp",
+  "short_name": "Pop-Top Camp",
+  "description": "Gemütliches Pixel-Camping-Spiel: Baue rund um deinen grünen Retro-Bus Kiwi ein Camper-Paradies im Tal.",
+  "lang": "de",
+  "dir": "ltr",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#1e3a1a",
+  "theme_color": "#065f46",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
