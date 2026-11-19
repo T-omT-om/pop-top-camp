@@ -1,5 +1,5 @@
 // Pop-Top Camp – Offline-Cache (erst Netz, sonst Cache). Bei jedem Update die Versionsnummer erhöhen.
-const CACHE = 'poptopcamp-v12-191120260824';
+const CACHE = 'poptopcamp-v13-191120261156';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png'];
 
 self.addEventListener('install', e => {
@@ -15,8 +15,11 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET' || !e.request.url.startsWith(self.location.origin)) return;
+  // the game page itself is always revalidated with the server, so a new version shows up on the very next start
+  const isPage = e.request.mode === 'navigate' || /\/(index\.html)?$/.test(new URL(e.request.url).pathname);
+  const net = isPage ? fetch(e.request.url, { cache: 'no-cache', credentials: 'same-origin' }) : fetch(e.request);
   e.respondWith(
-    fetch(e.request)
+    net
       .then(res => {
         if (res && res.ok) {
           const copy = res.clone();
