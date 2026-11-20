@@ -1,5 +1,5 @@
 // Pop-Top Camp – Offline-Cache (erst Netz, sonst Cache). Bei jedem Update die Versionsnummer erhöhen.
-const CACHE = 'poptopcamp-v13-191120261156';
+const CACHE = 'poptopcamp-v14-201120261406';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png'];
 
 self.addEventListener('install', e => {
